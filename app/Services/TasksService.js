@@ -7,8 +7,9 @@ class TasksService {
     console.log("Tasks Service constructor")
     ProxyState.on("tasks", saveState)
   }
-  
+
   createTask(newTask){
+    console.log(newTask)
     let tasks = ProxyState.tasks
     tasks.push(new Task(newTask))
     ProxyState.tasks = tasks

@@ -16,8 +16,8 @@ export default class List {
             <div class="form-group">
                 <label for="taskDescription">Task Description</label>
                 <input type="text" name="taskDescription" id="taskDescription" class="form-control"
-                    placeholder="Task Description" aria-describedby="helpId">
-                <button type="button" class="btn btn-success">Add</button>
+                    placeholder="Task description" aria-describedby="helpId">
+                <button type="submit" class="btn btn-success">Add</button>
             </div>
         </form>
         <p class="card-text">Tasks: </p>
