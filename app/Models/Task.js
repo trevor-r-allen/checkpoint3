@@ -8,7 +8,7 @@ export default class Task{
   }
   get Template(){
     return /*html*/`
-    <div class="col-6">
+    <div class="col">
     <h5>${this.description} <i class="fa fa-xing text-danger cursor-pointer" onclick="app.tasksController.deleteTask('${this.id}')" aria-hidden="true"></i></h5>
     </div>
     `

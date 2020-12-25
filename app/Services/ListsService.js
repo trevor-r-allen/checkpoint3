@@ -6,8 +6,10 @@ class ListsService {
   constructor(){
     console.log("Lists Service constructor")
     ProxyState.on("lists", saveState)
+    ProxyState.on("tasks", saveState)
   }
   createList(newList){
+    console.log(newList)
     let list = new List(newList)
     let lists = ProxyState.lists
     lists.push(list)
