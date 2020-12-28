@@ -1,18 +1,9 @@
-// import { ProxyState } from "../AppState.js"
 import { tasksService } from "../Services/TasksService.js"
 
-// function _drawTasks(){
-// let template = ""
-// ProxyState.tasks.forEach(task => template += task.Template)
-// document.getElementById("tasks").innerHTML = template
-// }
 
 export default class TasksController{
   constructor(){
-    console.log("Tasks Controller constructor")
-    // ProxyState.on("lists", _drawTasks)
-    // ProxyState.on("tasks", _drawTasks)
-    // _drawTasks()
+
   }
 
   createTask(listId){
@@ -29,19 +20,19 @@ export default class TasksController{
     form.reset()
   }
 
-  deleteTask(taskId){
+  deleteTask(taskId, listId){
     if(window.confirm("Are you sure?")){
-      tasksService.deleteTask(taskId)
+      tasksService.deleteTask(taskId, listId)
     }
   }
 
-  updateComplete(id){
+  updateComplete(taskId, listId){
     //@ts-ignore
-    if (document.getElementById(`check${id}`).checked){
-      tasksService.updateComplete(id, true)
+    if (document.getElementById(`check${taskId}`).checked){
+      tasksService.updateComplete(taskId, listId, true)
     }
     else{
-      tasksService.updateComplete(id, false)
+      tasksService.updateComplete(taskId, listId, false)
     }
   }
 }

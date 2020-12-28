@@ -6,14 +6,14 @@ export default class List {
     this.title = title
     this.color = color
     this.id = id || generateId()
-    this.tasksTotal = tasksTotal
-    this.tasksComplete = tasksComplete
+    this.tasksTotal = tasksTotal || 0
+    this.tasksComplete = tasksComplete || 0
   }
   get Template() {
     return /*html*/`
     <div class="card col-6 col-md-4">
       <h4 class="card-title text-center" style="background-color:${this.color}">${this.title}<br>${this.tasksComplete}/${this.tasksTotal} <button type="button" class="btn btn-danger"
-          onclick="app.listsController.deleteList('${this.id}'); app.tasksController. deleteTask('${this.id}')">Delete</button></h4>
+          onclick="app.listsController.deleteList('${this.id}')">Delete</button></h4>
       
       <div class="card-body">
           <form onsubmit="app.tasksController.createTask('${this.id}')">
@@ -37,7 +37,6 @@ get Tasks() {
   let template = ""
   let tasks = ProxyState.tasks.filter(task => task.listId == this.id)
   tasks.forEach(task => template += task.Template)
-  console.log(template)
   return template
 }
 }

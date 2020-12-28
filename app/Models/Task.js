@@ -11,9 +11,9 @@ export default class Task{
     return /*html*/`
     <div class="col">
         <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="" id="check${this.id}" ${this.complete ? 'checked' : ""} onclick="app.tasksController.updateComplete('${this.id}')">
+            <input class="form-check-input" type="checkbox" value="" id="check${this.id}" ${this.complete ? 'checked' : ""} onclick="app.tasksController.updateComplete('${this.id}','${this.listId}')">
             <label class="form-check-label" for="check${this.id}">
-            ${this.description} <i role="button" class="fa fa-xing text-danger cursor-pointer" onclick="app.tasksController.deleteTask('${this.id}')" aria-hidden="true"></i>
+            ${this.description} <i role="button" class="fa fa-xing text-danger cursor-pointer" onclick="app.tasksController.deleteTask('${this.id}','${this.listId}')" aria-hidden="true"></i>
             </label>
         </div>
     </div>
