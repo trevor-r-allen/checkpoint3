@@ -9,10 +9,10 @@ class TasksService {
   }
 
   createTask(newTask){
-    console.log(newTask)
     let tasks = ProxyState.tasks
     tasks.push(new Task(newTask))
     ProxyState.tasks = tasks
+    console.log(ProxyState.tasks)
   }
 
   deleteTask(taskId){

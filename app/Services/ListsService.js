@@ -9,7 +9,6 @@ class ListsService {
     ProxyState.on("tasks", saveState)
   }
   createList(newList){
-    console.log(newList)
     let list = new List(newList)
     let lists = ProxyState.lists
     lists.push(list)

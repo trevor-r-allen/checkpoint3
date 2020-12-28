@@ -1,10 +1,10 @@
 import { generateId } from "../Utils/GenerateId.js"
 
 export default class Task{
-  constructor(id, listId, description){
+  constructor({description, id, listId}){
+    this.description = description
     this.id = id || generateId()
     this.listId = listId
-    this.description = description
   }
   get Template(){
     return /*html*/`
