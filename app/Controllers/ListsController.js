@@ -20,7 +20,9 @@ export default class ListsController{
     let form = window.event.target
     let newList = {
       //@ts-ignore
-      title: form.listTitle.value
+      title: form.listTitle.value,
+      //@ts-ignore
+      color: form["color-picker"].value
     }
     listsService.createList(newList)
       //@ts-ignore

@@ -23,35 +23,15 @@
     </header>
     <main class="container-fluid">
         <div class="row mt-3">
-            <div class="col">
-                <!-- Button trigger modal -->
-                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#listModal">New
-                    List</button>
-
-                <!-- Modal -->
-                <div class="modal" id="listModal" tabindex="-1" aria-labelledby="listModalLabel"
-                    aria-hidden="true">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title">New List</h5>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
-                            </div>
-                            <div class="modal-body">
-                                <form onsubmit="app.listsController.createList()">
-                                    <div class="form-group">
-                                        <label for="listTitle">List Title</label>
-                                        <input type="text" class="form-control" name="listTitle" id="listTitle"
-                                            placeholder="List title">
-                                    </div>
-                                    <button type="submit" class="btn btn-primary">Create</button>
-                                </form>
-                            </div>
-                        </div>
+            <div class="col col-md-6">
+                <form onsubmit="app.listsController.createList()">
+                    <div class="form-group">
+                        <label for="listTitle">List Title</label>
+                        <input type="text" class="form-control" name="listTitle" id="listTitle" placeholder="List title">
+                        <input type="color" id="color-picker" name="color-picker" value="#ff0000">
+                        <button type="submit" class="btn btn-primary">Add</button>
                     </div>
-                </div>
+                </form>
             </div>
         </div>
         <div class="row" id="lists">
