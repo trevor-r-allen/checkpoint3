@@ -18,6 +18,14 @@ class TasksService {
   deleteTask(taskId){
     ProxyState.tasks = ProxyState.tasks.filter(task => task.id != taskId)
   }
+
+  updateComplete(taskId, bool){
+    console.log(ProxyState.tasks)
+    let taskIndex = ProxyState.tasks.findIndex(task => task.id == taskId)
+    ProxyState.tasks[taskIndex].complete = bool
+    let task = ProxyState.tasks[taskIndex]
+    console.log(task)
+  }
 }
 
 export const tasksService = new TasksService()

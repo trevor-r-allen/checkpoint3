@@ -27,7 +27,7 @@
                 <form onsubmit="app.listsController.createList()">
                     <div class="form-group">
                         <label for="listTitle">List Title</label>
-                        <input type="text" class="form-control" name="listTitle" id="listTitle" placeholder="List title">
+                        <input type="text" class="form-control" name="listTitle" id="listTitle" placeholder="List title" minlength="3" maxlength="15" pattern=".{3,15}" required>
                         <input type="color" id="color-picker" name="color-picker" value="#ff0000">
                         <button type="submit" class="btn btn-primary">Add</button>
                     </div>

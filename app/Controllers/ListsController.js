@@ -32,6 +32,8 @@ export default class ListsController{
   }
 
   deleteList(listId){
-    listsService.deleteList(listId)
+    if(window.confirm("Are you sure?")){
+      listsService.deleteList(listId)
+    }
   }
 }

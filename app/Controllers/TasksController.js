@@ -30,6 +30,18 @@ export default class TasksController{
   }
 
   deleteTask(taskId){
-    tasksService.deleteTask(taskId)
+    if(window.confirm("Are you sure?")){
+      tasksService.deleteTask(taskId)
+    }
+  }
+
+  updateComplete(id){
+    //@ts-ignore
+    if (document.getElementById(`check${id}`).checked){
+      tasksService.updateComplete(id, true)
+    }
+    else{
+      tasksService.updateComplete(id, false)
+    }
   }
 }
